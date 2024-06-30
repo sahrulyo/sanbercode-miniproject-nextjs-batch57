@@ -1,6 +1,5 @@
-
-import Header from "@/components/header/header ";
-import Footer  from "@/components/footer/footer ";
+import Homepage from "./hompage"; 
+import Layout from "@/layout ";
 
 
 
@@ -8,8 +7,9 @@ export default function Home() {
   return (
    <div>
   
-    <Header/>
-    <Footer/>
+   <Layout>
+  <Homepage/>
+   </Layout>
    </div>
   );
 }
