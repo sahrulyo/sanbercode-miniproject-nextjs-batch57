@@ -7,7 +7,7 @@ export default function Home() {
   return (
    <div>
   
-   <Layout>
+   <Layout metaTitle="Home">
   <Homepage/>
    </Layout>
    </div>
