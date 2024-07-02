@@ -88,7 +88,7 @@ const AddNotes = ({ onClose }) => {
                   <div className="sm:col-span-2">
                     <label
                       htmlFor="description"
-                      className="block mb-2 text-sm font-medium text-gray-900"
+                      className="block mb-2 mt-4 text-sm font-medium text-gray-900"
                     >
                       Deskripsi
                     </label>
@@ -108,7 +108,7 @@ const AddNotes = ({ onClose }) => {
                     type="submit"
                     className="text-white bg-blue-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5"
                   >
-                    Kirim
+                    Submit Catatan
                   </button>
                 </div>
               </form>

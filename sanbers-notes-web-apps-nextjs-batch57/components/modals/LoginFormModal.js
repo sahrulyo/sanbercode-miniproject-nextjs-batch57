@@ -4,6 +4,14 @@ import { useState } from 'react';
 const Login = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
+  const [payload, setPayload] = useState ({
+    email:"",
+    password:""
+  })
+
+  const HandleSubmit = () => {
+    console.log('hello =>', payload);
+  }
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-x-hidden overflow-y-auto bg-black bg-opacity-50">
       <div className="relative w-full max-w-md p-4 mx-auto bg-white rounded-lg shadow dark:bg-gray-700">
@@ -26,11 +34,11 @@ const Login = ({ isOpen, onClose }) => {
           <form className="space-y-4">
             <div>
               <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-              <input type="email" id="email" className="w-full p-2.5 text-sm text-gray-900 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required />
+              <input value={payload.email} onChange={(event) => setPayload({...payload, email:event.target.value})} type="email" id="email" className="w-full p-2.5 text-sm text-gray-900 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="email" required />
             </div>
             <div>
               <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
-              <input type="password" id="password" className="w-full p-2.5 text-sm text-gray-900 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="••••••••" required />
+              <input value={payload.password} onChange={(event) => setPayload({...payload, password:event.target.value})} type="password" id="password" className="w-full p-2.5 text-sm text-gray-900 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="password" required />
             </div>
             <div className="flex justify-between">
               <div className="flex items-start">
@@ -41,7 +49,7 @@ const Login = ({ isOpen, onClose }) => {
               </div>
               <a href="#" className="text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
             </div>
-            <button type="submit" className="w-full px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login to your account</button>
+            <button onClick={() => HandleSubmit} type="submit" className="w-full px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login to your account</button>
             <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
               Not registered? <a href="#" className="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
             </div>

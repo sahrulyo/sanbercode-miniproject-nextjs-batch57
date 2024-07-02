@@ -15,10 +15,10 @@ const Notes = () => {
     const handleDelete = async (id) => {
       try {
         await deleteItem(id);
-        window.alert("Note deleted successfully!");
+        window.alert("Berhasil dihapus!");
         setIsModalOpen(false);  // Menutup modal ketika berhasil menghapus
       } catch (error) {
-        console.error("Failed to delete the note:", error);
+        console.error("Gagal hapus:", error);
       }
     };
   
@@ -46,10 +46,23 @@ const Notes = () => {
             <div className="flex justify-end m-5" style={{ width: '82%' }}>
               <button
                 onClick={toggleModal}
-                className="text-white bg-blue-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                className="text-white bg-blue-400 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-full text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                 type="button"
-              >
-               Add Notes
+              > 
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                className="w-6 h-6"
+              > 
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 4v16m8-8H4"
+                />
+               </svg>
               </button>
             </div>
   
